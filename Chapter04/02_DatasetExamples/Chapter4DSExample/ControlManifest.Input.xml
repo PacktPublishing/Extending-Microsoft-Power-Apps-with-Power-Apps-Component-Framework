@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="PowerMeUp" constructor="Chapter4DSExample" version="0.0.1" display-name-key="Chapter4DSExample" description-key="Chapter4DSExample description" control-type="standard">
+    <data-set name="myDataSet" display-name-key="My DataSet Grid" description-key="Description" cds-data-set-options="displayCommandBar:true;displayViewSelector:true;displayQuickFindSearch:true">
+      <property-set name="myNamePropertySet" display-name-key="Name Property" description-key="Name Property_Desc" of-type="SingleLine.Text" usage="bound" required="true" />
+      <property-set name="myNumberPropertySet" display-name-key="Number Property" description-key="Number Property_Desc" of-type="Whole.None" usage="bound" required="true" />
+    </data-set>
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/DatasetTypeManifest.css" order="1" />
+      <img path="img/default.png" />
+      <html path="views/someUIElements.html" order="2" />
+    </resources>
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>

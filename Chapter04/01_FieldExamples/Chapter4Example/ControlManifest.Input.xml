@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest>
+  <control namespace="PowerMeUp" constructor="Chapter4Example" version="0.0.1" display-name-key="Chapter4Example" description-key="Chapter4Example description" control-type="standard">
+    <property name="PropSingleDataType" display-name-key="PropSingleDataType" description-key="PropSingleDataType" of-type="SingleLine.Text" usage="bound" required="true" default-value="Single Data Type"/>
+    <property name="PropMultipleDataType" display-name-key="PropMultipleDataType" description-key="PropMultipleDataType" of-type-group="multipletypes" usage="input" required="true" default-value="Multiple Data Type"/>
+    <type-group name="multipletypes">
+      <type>SingleLine.Text</type>
+      <type>SingleLine.TextArea</type>
+      <type>Multiple</type>
+    </type-group>
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/Chapter4Example.css" order="1"/>
+      <img path="img/default.png"/>
+      <html path="views/someUIElements.html" order="2"/>
+      <resx path="strings/Chapter4Example.1033.resx" version="1.0.0"/>
+      <resx path="strings/Chapter4Example.1036.resx" version="1.0.0"/>
+    </resources>
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true"/>
+      <uses-feature name="Device.captureImage" required="true"/>
+      <uses-feature name="Device.captureVideo" required="true"/>
+      <uses-feature name="Device.getBarcodeValue" required="true"/>
+      <uses-feature name="Device.getCurrentPosition" required="true"/>
+      <uses-feature name="Device.pickFile" required="true"/>
+      <uses-feature name="Utility" required="true"/>
+      <uses-feature name="WebAPI" required="true"/>
+    </feature-usage>
+  </control>
+</manifest>
