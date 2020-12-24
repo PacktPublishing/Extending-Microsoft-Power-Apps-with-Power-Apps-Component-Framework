@@ -1,0 +1,15 @@
+{
+  "generator-pcf": {
+    "promptValues": {
+      "controlNamespace": "PowerMeUp",
+      "publisherPrefix": "pmu",
+      "publisherName": "PowerMeUpExercises"
+    },
+    "controlNamespace": "PowerMeUp",
+    "controlName": "CustomTagsPCVS",
+    "controlTemplate": "Field",
+    "npmPackage": 0,
+    "publisherPrefix": "pmu",
+    "publisherName": "PowerMeUpExercises"
+  }
+}

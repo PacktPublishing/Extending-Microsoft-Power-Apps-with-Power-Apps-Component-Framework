@@ -1,0 +1,66 @@
+.PowerMeUp\.MyDataCard .main {
+    overflow-y: auto;
+}
+
+.PowerMeUp\.MyDataCard .grid {
+    background-color: transparent;
+    border: solid thin lightgray;
+    padding: 10px;
+    display: inline-block;
+    overflow: auto;
+}
+
+.PowerMeUp\.MyDataCard .gridItem {
+    margin: 5px;
+    width: 200px;
+    height: 200px;
+    color: white;
+    border: solid thin black;
+    padding: 5px;
+    text-align: left;
+    float: left;
+    background-color: #1fc8db;
+    background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+.PowerMeUp\.MyDataCard .gridLabel, .PowerMeUp\.MyDataCard .gridText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 120px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.PowerMeUp\.MyDataCard .gridLabel {
+    margin: 2px;
+    color: lightcyan;
+    width: auto;
+}
+
+.PowerMeUp\.MyDataCard .gridText {
+    margin: 1px;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+.PowerMeUp\.MyDataCard .gridNoRecords {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PowerMeUp\.MyDataCard .customButton {
+    background-color: #e5e5e5;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3.5rem;
+    text-align: center;
+    width: 100%;
+    border: none;
+}
+
+.PowerMeUp\.MyDataCard .customButtonHidden {
+    display: none;
+}

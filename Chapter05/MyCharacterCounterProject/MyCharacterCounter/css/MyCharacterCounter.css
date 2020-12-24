@@ -1,0 +1,16 @@
+.customTextArea {
+    resize: none;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    padding: 2px;
+    width: 96%;
+    height: 100%;
+}
+
+.customTextArea:hover {
+    border-color: rgb(169, 169, 169);
+}

@@ -1,0 +1,15 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "https://powermaverick.crm.dynamics.com/main.aspx?appid=e0ed57fd-8c18-ea11-a811-000d3a300d71&pagetype=entityrecord&etn=contact&id=c0d5e5c3-c055-ea11-a811-000d3a300367",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
