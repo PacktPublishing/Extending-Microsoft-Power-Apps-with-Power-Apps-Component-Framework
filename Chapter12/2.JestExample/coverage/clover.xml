@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1610456692405" clover="3.2.0">
+  <project timestamp="1610456692405" name="All files">
+    <metrics statements="29" coveredstatements="8" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="3" elements="46" coveredelements="11" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
+    <file name="index.ts" path="C:\PowerMeUpExamples\Chapter12\2.JestExample\MyCharCount\index.ts">
+      <metrics statements="29" coveredstatements="8" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="3"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="49" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="52" count="0" type="stmt"/>
+      <line num="53" count="0" type="stmt"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="63" count="0" type="cond" truecount="0" falsecount="4"/>
+      <line num="64" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="65" count="0" type="stmt"/>
+      <line num="66" count="0" type="stmt"/>
+      <line num="67" count="0" type="stmt"/>
+      <line num="68" count="0" type="stmt"/>
+      <line num="70" count="0" type="stmt"/>
+      <line num="77" count="1" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+      <line num="87" count="1" type="stmt"/>
+      <line num="94" count="1" type="stmt"/>
+      <line num="95" count="3" type="stmt"/>
+      <line num="97" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
