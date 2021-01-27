@@ -31,15 +31,15 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 		context.mode.trackContainerResize(true);
 
 		this.theNotifyOutputChanged = notifyOutputChanged;
-		this.maxCharacterLimit = context.parameters.characterCounterLimit.raw || 0;
+		this.maxCharacterLimit = context.parameters.characterCounterLimit.raw ?? 0;
 
 		//UI
 		this.mainDiv = document.createElement("div");
 
 		this.textbox = document.createElement("textarea");
 		this.textbox.className = "customTextArea";
-		this.textbox.addEventListener("keyup",this.OnChange.bind(this));
-		this.textbox.value = context.parameters.characterCounterDataInput.raw || "";
+		this.textbox.addEventListener("keyup",this.onChange.bind(this));
+		this.textbox.value = context.parameters.characterCounterDataInput.raw ?? "";
 
 		this.outputLabel = document.createElement("label");
 
@@ -47,7 +47,7 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 		this.mainDiv.appendChild(this.outputLabel);
 		container.appendChild(this.mainDiv);
 
-		this.OnChange();
+		this.onChange();
 	}
 
 
@@ -60,7 +60,7 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 		let changedCharCounterLimit = context.parameters.characterCounterLimit.raw ?? 0;
 		if (this.maxCharacterLimit !== changedCharCounterLimit) {
 			this.maxCharacterLimit = changedCharCounterLimit;
-			this.OnChange();
+			this.onChange();
 		}
 		console.log("This line of code appear in console");
 	}
@@ -88,9 +88,9 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 	/*******************/
 	/*PRIVATE FUNCTIONS*/
 	/*******************/
-	private OnChange(): void 
+	private onChange(): void 
 	{
-		let charRemaining = this.maxCharacterLimit - this.textbox.value.length;
+		const charRemaining = this.maxCharacterLimit - this.textbox.value.length;
 		this.outputLabel.innerHTML = `${charRemaining}/${this.maxCharacterLimit}`;
 		this.theNotifyOutputChanged();
 	}

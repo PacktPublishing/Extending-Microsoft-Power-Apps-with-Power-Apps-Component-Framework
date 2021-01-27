@@ -122,16 +122,16 @@ export class MyDataCard implements ComponentFramework.StandardControl<IInputs, I
 	}
 
 	private createGridBody(columnsOnView: DataSetInterfaces.Column[], gridParam: DataSet): HTMLDivElement {
-		let gridBody: HTMLDivElement = document.createElement("div");
+		const gridBody: HTMLDivElement = document.createElement("div");
 
 		if (gridParam.sortedRecordIds.length > 0) {
 			for (let currentRecordId of gridParam.sortedRecordIds) {
-				let gridRecord: HTMLDivElement = this.createCard(columnsOnView, gridParam, currentRecordId);
+				const gridRecord: HTMLDivElement = this.createCard(columnsOnView, gridParam, currentRecordId);
 				gridBody.appendChild(gridRecord);
 			}
 		}
 		else {
-			let noRecordLabel: HTMLDivElement = document.createElement("div");
+			const noRecordLabel: HTMLDivElement = document.createElement("div");
 			noRecordLabel.innerHTML = "No records found";
 			gridBody.appendChild(noRecordLabel);
 		}
@@ -140,7 +140,7 @@ export class MyDataCard implements ComponentFramework.StandardControl<IInputs, I
 	}
 
 	private createCard(columnsOnView: DataSetInterfaces.Column[], gridParam: DataSet, currentRecordId: string): HTMLDivElement {
-		let gridRecord: HTMLDivElement = document.createElement("div");
+		const gridRecord: HTMLDivElement = document.createElement("div");
 		gridRecord.className = "gridItem";
 		gridRecord.setAttribute(gridRowRecordId, gridParam.records[currentRecordId].getRecordId());
 
@@ -152,12 +152,12 @@ export class MyDataCard implements ComponentFramework.StandardControl<IInputs, I
 	}
 
 	private createCardItems(gridParam: DataSet, currentRecordId: string, columnItems: DataSetInterfaces.Column): HTMLParagraphElement {
-		let para = document.createElement("p");
+		const para = document.createElement("p");
 
-		let label = document.createElement("span");
+		const label = document.createElement("span");
 		label.className = "gridLabel";
 		label.innerHTML = `${columnItems.displayName}:`;
-		let content = document.createElement("span");
+		const content = document.createElement("span");
 		content.className = "gridText";
 		if (gridParam.records[currentRecordId].getFormattedValue(columnItems.name) != null && gridParam.records[currentRecordId].getFormattedValue(columnItems.name) != "") {
 			content.innerHTML = gridParam.records[currentRecordId].getFormattedValue(columnItems.name);
