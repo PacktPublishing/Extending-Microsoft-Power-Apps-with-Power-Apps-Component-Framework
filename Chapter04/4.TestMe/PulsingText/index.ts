@@ -1,14 +1,17 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 
-export class MyCharacterCounter implements ComponentFramework.StandardControl<IInputs, IOutputs> {
-
-	private mainDiv: HTMLDivElement;
-	private textbox: HTMLTextAreaElement;
-	private outputLabel: HTMLLabelElement;
+export class PulsingText implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+	private boxDiv: HTMLDivElement;
+	private boxInnerDiv: HTMLDivElement;
+	private textInput: HTMLInputElement;
+	
+	private refreshData: EventListenerOrEventListenerObject;
 
 	private theNotifyOutputChanged: () => void;
+	private theContainer: HTMLDivElement;
 
-	private maxCharacterLimit: number;
+	private textValue: string;
+
 
 	/**
 	 * Empty constructor.
@@ -28,26 +31,24 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 	 */
 	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement)
 	{
-		context.mode.trackContainerResize(true);
+		// UI
+		this.boxDiv = document.createElement("div");
+		this.boxDiv.setAttribute("class", "box");
+		this.boxInnerDiv = document.createElement("div");
+		this.boxInnerDiv.setAttribute("class", "animated pulse");
+		this.textInput = document.createElement("input");
+		this.textInput.setAttribute("class", "textfield");
+		this.textInput.type = "text";
 
-		this.theNotifyOutputChanged = notifyOutputChanged;
-		this.maxCharacterLimit = context.parameters.characterCounterLimit.raw ?? 0;
+		// Assign value from parameters to text field
+		this.textInput.value = context.parameters.PulsingTextField.raw || "No value found from parameter";
 
-		//UI
-		this.mainDiv = document.createElement("div");
+		// Add elemets to proper div
+		this.boxDiv.appendChild(this.boxInnerDiv);
+		this.boxInnerDiv.appendChild(this.textInput);
 
-		this.textbox = document.createElement("textarea");
-		this.textbox.className = "customTextArea";
-		this.textbox.addEventListener("keyup",this.onChange.bind(this));
-		this.textbox.value = context.parameters.characterCounterDataInput.raw ?? "";
-
-		this.outputLabel = document.createElement("label");
-
-		this.mainDiv.appendChild(this.textbox);
-		this.mainDiv.appendChild(this.outputLabel);
-		container.appendChild(this.mainDiv);
-
-		this.onChange();
+		// Add control elements to the main div
+		container.appendChild(this.boxDiv);
 	}
 
 
@@ -57,12 +58,8 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
-		let changedCharCounterLimit = context.parameters.characterCounterLimit.raw ?? 0;
-		if (this.maxCharacterLimit !== changedCharCounterLimit) {
-			this.maxCharacterLimit = changedCharCounterLimit;
-			this.onChange();
-		}
-		console.log("This line of code appear in console");
+		// Assign value from parameters to text field
+		this.textInput.value = context.parameters.PulsingTextField.raw || "No value found from parameter";
 	}
 
 	/** 
@@ -71,9 +68,7 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 	 */
 	public getOutputs(): IOutputs
 	{
-		return {
-			characterCounterDataInput: this.textbox.value
-		};
+		return {};
 	}
 
 	/** 
@@ -83,15 +78,5 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 	public destroy(): void
 	{
 		// Add code to cleanup control if necessary
-	}
-
-	/*******************/
-	/*PRIVATE FUNCTIONS*/
-	/*******************/
-	private onChange(): void 
-	{
-		const charRemaining = this.maxCharacterLimit - this.textbox.value.length;
-		this.outputLabel.innerHTML = `${charRemaining}/${this.maxCharacterLimit}`;
-		this.theNotifyOutputChanged();
 	}
 }

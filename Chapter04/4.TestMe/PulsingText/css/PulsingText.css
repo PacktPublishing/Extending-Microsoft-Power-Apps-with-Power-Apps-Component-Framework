@@ -1,0 +1,31 @@
+.PowerMeUp\.PulsingText .box {
+  width: 100%;
+  height: auto;
+  background: #347fc3;
+  text-align: -webkit-center;
+}
+
+.PowerMeUp\.PulsingText .pulse {
+  animation-name: pulse;
+  animation-duration: 1.8s;
+  width: 80%;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+.PowerMeUp\.PulsingText .animated {
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.PowerMeUp\.PulsingText .textfield {
+  text-align: center;
+  width: inherit;
+}
+
+
+

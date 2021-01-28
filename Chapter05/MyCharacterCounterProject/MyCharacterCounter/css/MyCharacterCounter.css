@@ -1,4 +1,4 @@
-.customTextArea {
+.PowerMeUp\.MyCharacterCounter .customTextArea {
     resize: none;
     white-space: pre-wrap;
     overflow-wrap: break-word;
@@ -11,6 +11,6 @@
     height: 100%;
 }
 
-.customTextArea:hover {
+.PowerMeUp\.MyCharacterCounter .customTextArea:hover {
     border-color: rgb(169, 169, 169);
 }
