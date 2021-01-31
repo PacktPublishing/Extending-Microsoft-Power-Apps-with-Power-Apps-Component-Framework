@@ -2,8 +2,8 @@
 <manifest>
   <control namespace="PowerMeUp" constructor="MyCharacterCounter" version="0.0.1" preview-image="img/PowerUp-PreviewImage.png" display-name-key="Power Up Character Counter" description-key="Counts the number of characters remaining on the control" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="characterCounterDataInput" display-name-key="Data Input" description-key="Control that contains hosts the data" of-type="Multiple" usage="bound" required="true" />
-    <property name="characterCounterLimit" display-name-key="Character Limit" description-key="Define the upper limit of character a control can accept" of-type="Whole.None" usage="input" required="true" />
+    <property name="characterCounterDataInput" display-name-key="Data Input" description-key="Control that contains the data from the host where it is bound." of-type="Multiple" usage="bound" required="true" />
+    <property name="characterCounterLimit" display-name-key="Character Limit" description-key="Define the upper limit of characters a control can accept." of-type="Whole.None" usage="input" required="true" />
     <!-- 
       Property node's of-type attribute can be of-type-group attribute. 
       Example:
