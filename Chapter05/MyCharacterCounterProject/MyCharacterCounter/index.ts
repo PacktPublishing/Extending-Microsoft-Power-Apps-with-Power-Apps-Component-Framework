@@ -31,7 +31,7 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 		context.mode.trackContainerResize(true);
 
 		this.theNotifyOutputChanged = notifyOutputChanged;
-		this.maxCharacterLimit = context.parameters.characterCounterLimit.raw ?? 0;
+		this.maxCharacterLimit = context.parameters.characterCounterLimit.raw || 0;
 
 		//UI
 		this.mainDiv = document.createElement("div");
@@ -39,7 +39,7 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 		this.textbox = document.createElement("textarea");
 		this.textbox.className = "customTextArea";
 		this.textbox.addEventListener("keyup",this.onChange.bind(this));
-		this.textbox.value = context.parameters.characterCounterDataInput.raw ?? "";
+		this.textbox.value = context.parameters.characterCounterDataInput.raw || "";
 
 		this.outputLabel = document.createElement("label");
 
@@ -57,7 +57,7 @@ export class MyCharacterCounter implements ComponentFramework.StandardControl<II
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
-		let changedCharCounterLimit = context.parameters.characterCounterLimit.raw ?? 0;
+		let changedCharCounterLimit = context.parameters.characterCounterLimit.raw || 0;
 		if (this.maxCharacterLimit !== changedCharCounterLimit) {
 			this.maxCharacterLimit = changedCharCounterLimit;
 			this.onChange();
