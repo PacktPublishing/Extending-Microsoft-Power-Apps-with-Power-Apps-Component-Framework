@@ -4,9 +4,9 @@ import {
   Persona,
   PersonaSize,
   PersonaPresence,
-} from "office-ui-fabric-react/lib/Persona";
-import { Slider } from "office-ui-fabric-react/lib/Slider";
-import { Stack } from "office-ui-fabric-react/lib/Stack";
+} from "@fluentui/react/lib/Persona";
+import { Slider } from "@fluentui/react/lib/Slider";
+import { Stack } from "@fluentui/react/lib/Stack";
 import { TestImages } from "@uifabric/example-data";
 
 export const CustomPersona: React.FunctionComponent = () => {

@@ -109,58 +109,64 @@ export class ExternalDevicesExample implements ComponentFramework.StandardContro
 	/*******************/
 	/*PRIVATE FUNCTIONS*/
 	/*******************/
-	private OnCaptureAudio(): void {
-		this.theContext.device.captureAudio().then(aud => {
+	private async OnCaptureAudio(): Promise<void> {
+		let aud = await this.theContext.device.captureAudio()
+					.catch(err => this.displayOutput(err.message));
+
+		if (aud) {
 			this.audio.src = `data:${aud.mimeType};base64,${aud.fileContent}`;
 			this.audio.controls = true;
 			this.displayOutput(aud.fileName);
-		}, err => {
-			this.displayOutput(err.message);
-		});
+		}
 	}
 
-	private OnCaptureVideo(): void {
-		this.theContext.device.captureVideo().then(vid => {
+	private async OnCaptureVideo(): Promise<void> {
+		let vid = await this.theContext.device.captureVideo()
+					.catch(err =>this.displayOutput(err.message));
+
+		if (vid) {
 			this.video.src = `data:${vid.mimeType == "video/MOV" ? "video/quicktime" : vid.mimeType};base64,${vid.fileContent}`;
 			this.video.controls = true;
 			this.displayOutput(vid.fileName);
-		}, err => {
-			this.displayOutput(err.message);
-		});
+		}
 	}
 
-	private OnCaptureImage(): void {
-		this.theContext.device.captureImage().then(img => {
+	private async OnCaptureImage(): Promise<void> {
+		let img = await this.theContext.device.captureImage()
+					.catch(err => this.displayOutput(err.message));
+
+		if (img) {
 			this.image.className = "size-200px";
 			this.image.src = `data:${img.mimeType};base64,${img.fileContent}`;
 			this.displayOutput(img.fileName);
-		}, err => {
-			this.displayOutput(err.message);
-		});
+		}
 	}
 
-	private OnCaptureBarcode(): void {
-		this.theContext.device.getBarcodeValue().then(code => {
+	private async OnCaptureBarcode(): Promise<void> {
+		let code = await this.theContext.device.getBarcodeValue()
+					.catch(err => this.displayOutput(err.message));
+
+		if (code) {
 			this.displayOutput(code);
-		}, err => {
-			this.displayOutput(err.message);
-		});
+		}
 	}
 
-	private OnShowCurrentLocation(): void {
-		this.theContext.device.getCurrentPosition().then(pos => {
+	private async OnShowCurrentLocation(): Promise<void> {
+		let pos = await this.theContext.device.getCurrentPosition()
+					.catch(err => this.displayOutput(err.message));
+
+		if (pos) {
 			this.displayOutput(`Lat:${pos.coords.latitude},Long:${pos.coords.longitude}`);
-		}, err => {
-			this.displayOutput(err.message);
-		});
+		}
 	}
 
-	private OnPickFile(): void {
-		this.theContext.device.pickFile().then(files => {
+	private async OnPickFile(): Promise<void> {
+		let files = await this.theContext.device.pickFile()
+					.catch(err => this.displayOutput(err.message));
+
+		if (files) {
 			this.displayOutput(`File Name identified: ${files[0].fileName}`);
-		}, err => {
-			this.displayOutput(err.message);
-		})
+		}
 	}
 
 	private displayOutput(message: string) {

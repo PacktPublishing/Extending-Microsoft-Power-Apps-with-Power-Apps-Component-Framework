@@ -94,24 +94,27 @@ export class WebApiExample implements ComponentFramework.StandardControl<IInputs
 	/*******************/
 	/*PRIVATE FUNCTIONS*/
 	/*******************/
-	private OnCreateButtonClicked() {
+	private async OnCreateButtonClicked(): Promise<void> {
 		let contactData: ComponentFramework.WebApi.Entity = {};
 		contactData["firstname"] = "WebApi";
 		contactData["lastname"] = "Testing";
 		contactData["fullname"] = "WebApi Testing";
 
-		this.theContext.webAPI.createRecord("contact", contactData).then(resp => {
+		let resp = await this.theContext.webAPI.createRecord("contact", contactData)
+					.catch(err => console.log("Contact creation failed."));
+
+		if (resp) {
 			// Currently there is a bug with EntityReference defination
 			// It should be resp.id.guid as per doc but response contains the record GUID at resp.id
 			// Workaround is to typecast resp.is into any
 			this.contactEntityId = (<any>resp.id);
 			this.outputLabel.innerHTML = `Contact created with id = ${this.contactEntityId}.`;
-		});
+		}
 
 		this.updateContactButton.disabled = false;
 	}
 
-	private OnUpdateButtonClicked() {
+	private OnUpdateButtonClicked(): void {
 		if (this.contactEntityId) {
 			let contactData: ComponentFramework.WebApi.Entity = {};
 			contactData["jobtitle"] = "Power";
@@ -126,11 +129,14 @@ export class WebApiExample implements ComponentFramework.StandardControl<IInputs
 		this.retrieveContactButton.disabled = false;
 	}
 
-	private OnRetrieveButtonClicked(): void {
+	private async OnRetrieveButtonClicked(): Promise<void> {
 		if (this.contactEntityId) {
-			this.theContext.webAPI.retrieveRecord("contact", this.contactEntityId, "?$select=fullname,jobtitle").then(con => {
+			let con = await this.theContext.webAPI.retrieveRecord("contact", this.contactEntityId, "?$select=fullname,jobtitle")
+						.catch(err => console.log("Not able to fetch contact"));
+
+			if (con) {
 				this.outputLabel.innerHTML = `Contact info retrieved: <br/>Full Name: <b>${con.fullname}</b><br/>Job Title: <b>${con.jobtitle}</b>`;
-			});
+			}
 		}
 		else {
 			this.outputLabel.innerHTML = `Contact id is not defined.`;
@@ -139,12 +145,14 @@ export class WebApiExample implements ComponentFramework.StandardControl<IInputs
 		this.deleteContactButton.disabled = false;
 	}
 
-	private OnDeleteButtonClicked(): void {
+	private async OnDeleteButtonClicked(): Promise<void> {
 		if (this.contactEntityId) {
-			this.theContext.webAPI.deleteRecord("contact", this.contactEntityId).then(() => {
+			let con = await this.theContext.webAPI.deleteRecord("contact", this.contactEntityId)
+						.catch(err => console.log("Unable to delete the contact"));
+			if (con) {
 				this.contactEntityId = undefined;
 				this.outputLabel.innerHTML = `Contact was deleted.`;
-			});
+			}
 		}
 		else {
 			this.outputLabel.innerHTML = `Contact id is not defined.`;
@@ -155,13 +163,16 @@ export class WebApiExample implements ComponentFramework.StandardControl<IInputs
 		this.deleteContactButton.disabled = true;
 	}
 
-	private OnRetrieveMultipleButtonClicked(): void {
-		this.theContext.webAPI.retrieveMultipleRecords("contact", "?$select=fullname&$filter=contains(fullname,'sample')&$top=3").then(result => {
+	private async OnRetrieveMultipleButtonClicked(): Promise<void> {
+		let result = await this.theContext.webAPI.retrieveMultipleRecords("contact", "?$select=fullname&$filter=contains(fullname,'sample')&$top=3")
+						.catch(err => console.log("Failed to retrieve records"));
+
+		if (result) {
 			this.outputLabel.innerHTML = `Contact info where fullname contains sample.`;
 
 			result.entities.forEach(ele => {
 				this.outputLabel.innerHTML += `<br/>${ele.fullname}`;
 			});
-		});
+		}
 	}
 }
