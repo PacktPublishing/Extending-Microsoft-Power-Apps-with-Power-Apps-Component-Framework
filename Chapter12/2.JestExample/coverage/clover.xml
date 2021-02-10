@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1610456692405" clover="3.2.0">
-  <project timestamp="1610456692405" name="All files">
+<coverage generated="1612983422360" clover="3.2.0">
+  <project timestamp="1612983422360" name="All files">
     <metrics statements="29" coveredstatements="8" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="3" elements="46" coveredelements="11" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
-    <file name="index.ts" path="C:\PowerMeUpExamples\Chapter12\2.JestExample\MyCharCount\index.ts">
+    <file name="index.ts" path="C:\Code\GitHub\Extending-Microsoft-PowerApps-with-PowerApps-Component-Framework\Chapter12\2.JestExample\MyCharCount\index.ts">
       <metrics statements="29" coveredstatements="8" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="3"/>
       <line num="3" count="1" type="stmt"/>
       <line num="27" count="1" type="stmt"/>
