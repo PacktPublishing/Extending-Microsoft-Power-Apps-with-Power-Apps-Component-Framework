@@ -1,6 +1,6 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 
-export class CustomTagsPCVS implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class CustomTagsPGVS implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
 	/**
 	 * Empty constructor.

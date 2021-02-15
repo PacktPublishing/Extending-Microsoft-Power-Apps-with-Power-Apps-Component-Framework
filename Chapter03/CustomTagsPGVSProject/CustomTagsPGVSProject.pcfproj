@@ -9,7 +9,7 @@
   
   <PropertyGroup>
     <Name>CustomTagsPGVSProject</Name>
-    <ProjectGuid>42702c1c-2f21-4422-9a87-38068def174b</ProjectGuid>
+    <ProjectGuid>2923f4ca-916e-4fbd-854d-8c69ac76ce44</ProjectGuid>
     <OutputPath>$(MSBuildThisFileDirectory)out\controls</OutputPath>
   </PropertyGroup>
 
