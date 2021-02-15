@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest>
+  <control namespace="PowerMeUp" constructor="CustomTagsPGVS" version="0.0.1" display-name-key="CustomTagsPGVS" description-key="CustomTagsPGVS description" control-type="standard" preview-image="img/preview.png">
+    <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true"/>
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/CustomTagsPGVS.css" order="1"/>
+      <resx path="strings/CustomTagsPGVS.1033.resx" version="1.0.0"/>
+    </resources>
+  </control>
+</manifest>

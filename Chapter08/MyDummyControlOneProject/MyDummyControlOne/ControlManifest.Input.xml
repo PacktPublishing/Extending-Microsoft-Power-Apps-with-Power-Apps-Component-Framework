@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest>
-  <control namespace="PowerMaverick" constructor="MyDummyControlOne" version="0.0.1" display-name-key="MyDummyControlOne" description-key="MyDummyControlOne description" control-type="standard" preview-image="img/preview.png">
+  <control namespace="PowerMaverick" constructor="MyDummyControlOne" version="0.0.3" display-name-key="MyDummyControlOne" description-key="MyDummyControlOne description" control-type="standard" preview-image="img/preview.png">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="dummy1Property" display-name-key="Attach Dummy 1" description-key="Attach Dummy 1" of-type="SingleLine.Text" usage="bound" required="true" />
     <!-- 
@@ -15,7 +15,7 @@
       <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
     -->
     <resources>
-      <code path="index.ts" order="1"/>
+      <code path="index.ts" order="1" />
       <css path="css/MyDummyControlOne.css" order="1" />
       <resx path="strings/MyDummyControlOne.1033.resx" version="1.0.0" />
     </resources>

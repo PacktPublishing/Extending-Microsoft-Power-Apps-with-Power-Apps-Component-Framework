@@ -9,8 +9,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended",
         "prettier",
-        "prettier/@typescript-eslint",
-        "plugin:react/recommended"
+        "prettier/@typescript-eslint"
     ],
     "parserOptions": {
         "project": "./tsconfig.json"

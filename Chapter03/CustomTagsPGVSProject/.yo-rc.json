@@ -6,7 +6,7 @@
       "publisherName": "PowerMeUpExercises"
     },
     "controlNamespace": "PowerMeUp",
-    "controlName": "CustomTagsPCVS",
+    "controlName": "CustomTagsPGVS",
     "controlTemplate": "Field",
     "npmPackage": 0,
     "publisherPrefix": "pmu",
