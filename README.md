@@ -67,7 +67,7 @@ Example code was created using following tools listed with their respective vers
 | [Node JS](https://nodejs.org) | >= 12.18.3 |
 | [npm](https://nodejs.org) | >= 6.14.6 |
 
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](: https://static.packt-cdn.com/downloads/9781800564916_ColorImages.pdf).
+We also provide a PDF file that has color images of the screenshots/diagrams used in thi book. [Click here to download it](https://static.packt-cdn.com/downloads/9781800564916_ColorImages.pdf).
 
 ## About the Author
 
