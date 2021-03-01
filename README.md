@@ -1,6 +1,6 @@
 # Extending Microsoft Power Apps with Power Apps Component Framework
 
-<a href="https://www.packtpub.com/in/business-other/extending-microsoft-power-apps-with-power-apps-component-framework?utm_source=github&utm_medium=repository&utm_campaign=9781786461629"><img src="" alt="Useful Links" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/in/business-other/extending-microsoft-power-apps-with-power-apps-component-framework?utm_source=github&utm_medium=repository&utm_campaign=9781786461629"><img src="https://www.packtpub.com/media/catalog/product/cache/4cdce5a811acc0d2926d7f857dceb83b/9/7/9781800564916-original_23.png" alt="Useful Links" height="256px" align="right"></a>
 
 This is the code repository for [Extending Microsoft Power Apps with Power Apps Component Framework](https://www.packtpub.com/in/business-other/extending-microsoft-power-apps-with-power-apps-component-framework?utm_source=github&utm_medium=repository&utm_campaign=9781786461629), published by Packt.
 
@@ -18,8 +18,6 @@ guidelines. You'll then learn how to extend Power Apps step by step and apply th
 
 By the end of this Power Apps book, you'll be able to build, debug, enrich, and deploy code
 components confidently.
-
-This book is for developers who are looking to build advanced skills for extending the capabilities of Power Apps. Basic knowledge of Power Apps and web development is necessary to get started with this book.
 
 This book covers the following exciting features:
 Understand the fundamentals of Power Apps Component Framework
