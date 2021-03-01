@@ -51,7 +51,7 @@ The installation prerequisites to get started with Power Apps Component Framewor
 explained as a step-by-step guide in _Chapter 1, Introduction to Power Apps Component
 Framework_.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-12).
+
 
 ## Tools & Versions
 
@@ -66,6 +66,8 @@ Example code was created using following tools listed with their respective vers
 | [PCF Generator](https://www.npmjs.com/package/generator-pcf) | >= 1.4.5 |
 | [Node JS](https://nodejs.org) | >= 12.18.3 |
 | [npm](https://nodejs.org) | >= 6.14.6 |
+
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](: https://static.packt-cdn.com/downloads/9781800564916_ColorImages.pdf).
 
 ## About the Author
 
