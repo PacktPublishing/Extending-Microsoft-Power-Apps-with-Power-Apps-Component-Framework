@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B16892?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Extending Microsoft Power Apps with Power Apps Component Framework
 
 <a href="https://www.packtpub.com/in/business-other/extending-microsoft-power-apps-with-power-apps-component-framework?utm_source=github&utm_medium=repository&utm_campaign=9781786461629"><img src="https://www.packtpub.com/media/catalog/product/cache/4cdce5a811acc0d2926d7f857dceb83b/9/7/9781800564916-original_23.png" alt="Useful Links" height="256px" align="right"></a>
